@@ -2,12 +2,14 @@ package utils
 
 import (
 	"context"
+	"github.com/fbsobreira/gotron-sdk/pkg/client"
 	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
 	"time"
 )
 
 func GetNowBlock(uri string) (int64, error) {
-	g := NewGrpcClient(uri)
+	//g := NewGrpcClient(uri)
+	g := client.NewGrpcClient(uri)
 	err := g.Start()
 	if err != nil {
 		return 0, err
